@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618222207) do
+ActiveRecord::Schema.define(version: 20150629190708) do
+
+  create_table "note_comments", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "note_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "note_comments", ["note_id"], name: "index_note_comments_on_note_id"
 
   create_table "notes", force: :cascade do |t|
     t.string   "title"
