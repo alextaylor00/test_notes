@@ -2581,3 +2581,251 @@ Completed 200 OK in 746ms (Views: 743.2ms | ActiveRecord: 1.5ms)
   [1m[36mSQL (4.1ms)[0m  [1mDELETE FROM "notes" WHERE "notes"."id" = ?[0m  [["id", 6]]
   [1m[35m (2.9ms)[0m  commit transaction
   [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+
+
+Started GET "/" for 10.0.2.2 at 2015-06-29 17:50:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#index as HTML
+  [1m[35mNote Load (1.7ms)[0m  SELECT "notes".* FROM "notes"  ORDER BY "notes"."created_at" DESC
+  Rendered notes/_note.html.erb (1.5ms)
+  Rendered notes/index.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 685ms (Views: 681.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-06-29 17:50:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#index as HTML
+  [1m[36m (2.4ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35mNote Load (1.1ms)[0m  SELECT "notes".* FROM "notes"  ORDER BY "notes"."created_at" DESC
+  Rendered notes/_note.html.erb (1.2ms)
+  Rendered notes/index.html.erb within layouts/application (40.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 705ms (Views: 696.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-72e6d92ea3ce27b2df4c6369af6afd9568a005eaad68694756ae8c0dea7f6219.css?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 10.0.2.2 at 2015-06-29 17:50:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/notes/5" for 10.0.2.2 at 2015-06-29 17:51:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNote Load (2.5ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ?  ORDER BY "notes"."created_at" DESC LIMIT 1[0m  [["id", 5]]
+  Rendered notes/_note.html.erb (1.4ms)
+  Rendered notes/show.html.erb within layouts/application (35.2ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 757ms (Views: 715.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/notes" for 10.0.2.2 at 2015-06-29 17:51:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#index as HTML
+  [1m[35mNote Load (1.8ms)[0m  SELECT "notes".* FROM "notes"  ORDER BY "notes"."created_at" DESC
+  Rendered notes/_note.html.erb (1.1ms)
+  Rendered notes/index.html.erb within layouts/application (57.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 678ms (Views: 675.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/notes/new" for 10.0.2.2 at 2015-06-29 17:51:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (8.4ms)
+  Rendered notes/new.html.erb within layouts/application (104.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 729ms (Views: 727.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes/new" for 10.0.2.2 at 2015-06-29 17:52:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered notes/new.html.erb within layouts/application (52.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 687ms (Views: 685.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2015-06-29 17:53:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 10.0.2.2 at 2015-06-29 17:53:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 10.0.2.2 at 2015-06-29 17:53:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 10.0.2.2 at 2015-06-29 17:53:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2015-06-29 17:53:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-72e6d92ea3ce27b2df4c6369af6afd9568a005eaad68694756ae8c0dea7f6219.css?body=1" for 10.0.2.2 at 2015-06-29 17:53:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2015-06-29 17:53:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2015-06-29 17:53:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 10.0.2.2 at 2015-06-29 17:53:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/notes/new" for 10.0.2.2 at 2015-06-29 17:55:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/new.html.erb within layouts/application (23.7ms)
+Completed 500 Internal Server Error in 1746ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Mixin box-sizing is missing argument $boxmodel.):
+    2: <html>
+    3: <head>
+    4:   <title>TestNotesApp</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/custom.scss:14:in `box_sizing'
+  app/assets/stylesheets/custom.scss:14
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1026662412631307505_35663900'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.7ms)
+
+
+Started GET "/notes/new" for 10.0.2.2 at 2015-06-29 17:55:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/new.html.erb within layouts/application (28.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 4488ms (Views: 4486.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-1b648116027433fcd9d92026a6718a9532a4f57f8012c0d89594563e31e412a5.css?body=1" for 10.0.2.2 at 2015-06-29 17:55:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2015-06-29 17:55:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 10.0.2.2 at 2015-06-29 17:55:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2015-06-29 17:55:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 10.0.2.2 at 2015-06-29 17:55:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 10.0.2.2 at 2015-06-29 17:55:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2015-06-29 17:55:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2015-06-29 17:55:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 10.0.2.2 at 2015-06-29 17:55:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/notes/new" for 10.0.2.2 at 2015-06-29 17:57:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/new.html.erb within layouts/application (47.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 645ms (Views: 643.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2015-06-29 17:57:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 10.0.2.2 at 2015-06-29 17:57:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 10.0.2.2 at 2015-06-29 17:57:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 10.0.2.2 at 2015-06-29 17:57:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-1b648116027433fcd9d92026a6718a9532a4f57f8012c0d89594563e31e412a5.css?body=1" for 10.0.2.2 at 2015-06-29 17:57:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2015-06-29 17:57:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2015-06-29 17:57:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2015-06-29 17:57:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 10.0.2.2 at 2015-06-29 17:57:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255

@@ -11,7 +11,6 @@ class NotesTest < ActionDispatch::IntegrationTest
     end
 
     assert_template 'notes/new'
-
   end
 
 end
