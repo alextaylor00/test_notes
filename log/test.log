@@ -1,0 +1,127 @@
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (9.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (8.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (2.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (6.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150618222207')
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.7ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (1.8ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:20:11', '2015-06-29 17:20:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:20:11', '2015-06-29 17:20:11', 298486374)[0m
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.6ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:26:13', '2015-06-29 17:26:13', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:26:13', '2015-06-29 17:26:13', 298486374)[0m
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.6ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:26:59', '2015-06-29 17:26:59', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:26:59', '2015-06-29 17:26:59', 298486374)[0m
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.9ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:27:18', '2015-06-29 17:27:18', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:27:18', '2015-06-29 17:27:18', 298486374)[0m
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (3.1ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:27:59', '2015-06-29 17:27:59', 980190962)
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:27:59', '2015-06-29 17:27:59', 298486374)[0m
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.5ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:28:11', '2015-06-29 17:28:11', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:28:11', '2015-06-29 17:28:11', 298486374)[0m
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.6ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:36:52', '2015-06-29 17:36:52', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:36:52', '2015-06-29 17:36:52', 298486374)[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 17:36:52 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered notes/new.html.erb within layouts/application (93.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 15743ms (Views: 15717.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.8ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:38:15', '2015-06-29 17:38:15', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 17:38:15', '2015-06-29 17:38:15', 298486374)[0m
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 17:38:15 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (23.2ms)
+  Rendered notes/new.html.erb within layouts/application (118.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 1129ms (Views: 1098.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 17:38:16 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (2.6ms)
+  Rendered notes/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction

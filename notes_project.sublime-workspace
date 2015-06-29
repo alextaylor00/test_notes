@@ -1,0 +1,540 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"relationship_path",
+				"relationships_path"
+			],
+			[
+				"foll",
+				"followers"
+			],
+			[
+				"Relationshi",
+				"relationship"
+			],
+			[
+				"rel",
+				"relationship2"
+			],
+			[
+				"fol",
+				"followed_id"
+			],
+			[
+				"micro",
+				"micropost"
+			],
+			[
+				"micropos",
+				"microposts_path"
+			],
+			[
+				"micrp",
+				"micropost"
+			],
+			[
+				"pass",
+				"password_resets_path"
+			],
+			[
+				"asser",
+				"assert_equal"
+			],
+			[
+				"passwor",
+				"password_digest"
+			],
+			[
+				"assert",
+				"assert_redirected_to"
+			],
+			[
+				"remem",
+				"remember_digest"
+			],
+			[
+				"remeb",
+				"remember_digest"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"assert_",
+				"assert_select"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/layouts/_header.html.erb",
+			"settings":
+			{
+				"buffer_size": 1659,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 529,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/notes/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 76,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/notes_controller.rb",
+			"settings":
+			{
+				"buffer_size": 750,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/notes/new.html.erb",
+			"settings":
+			{
+				"buffer_size": 286,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/shared/_error_messages.html.erb",
+			"settings":
+			{
+				"buffer_size": 308,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/vagrant/projects/test_notes_app/app/assets/stylesheets/custom.scss",
+		"/C/vagrant/projects/test_notes_app/app/assets/stylesheets/application.css",
+		"/C/vagrant/projects/test_notes_app/app/assets/javascripts/application.js",
+		"/C/vagrant/projects/test_notes_app/app/views/layouts/application.html.erb",
+		"/C/vagrant/projects/test_notes_app/Gemfile",
+		"/C/vagrant/projects/test_notes_app/db/seeds.rb",
+		"/C/vagrant/projects/test_notes_app/app/views/notes/_note.html.erb",
+		"/C/vagrant/projects/test_notes_app/app/views/notes/index.html.erb",
+		"/C/vagrant/projects/test_notes_app/app/views/notes/show.html.erb",
+		"/C/vagrant/projects/test_notes_app/app/models/note.rb",
+		"/C/vagrant/projects/test_notes_app/config/routes.rb",
+		"/C/vagrant/projects/test_notes_app/app/controllers/notes_controller.rb",
+		"/C/Users/ataylor/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/vagrant/projects/sample_app/app/views/users/_unfollow.html.erb",
+		"/C/vagrant/projects/sample_app/app/controllers/microposts_controller.rb",
+		"/C/vagrant/projects/sample_app/app/controllers/relationships_controller.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/_follow.html.erb",
+		"/C/vagrant/projects/sample_app/test/integration/following_test.rb",
+		"/C/vagrant/projects/sample_app/app/models/user.rb",
+		"/C/vagrant/projects/sample_app/test/fixtures/users.yml",
+		"/C/vagrant/projects/sample_app/app/views/relationships/destroy.js.erb",
+		"/C/vagrant/projects/sample_app/config/application.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/_follow_form.html.erb",
+		"/C/vagrant/projects/sample_app/test/controllers/relationships_controller_test.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/show.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/microposts/_micropost.html.erb",
+		"/C/vagrant/projects/sample_app/app/controllers/users_controller.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/show_follow.erb",
+		"/C/vagrant/projects/sample_app/test/models/user_test.rb",
+		"/C/vagrant/projects/sample_app/test/fixtures/relationships.yml",
+		"/C/vagrant/projects/sample_app/app/views/layouts/application.html.erb",
+		"/C/vagrant/projects/sample_app/app/helpers/application_helper.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/following.html.erb",
+		"/C/vagrant/projects/sample_app/test/controllers/users_controller_test.rb",
+		"/C/vagrant/projects/sample_app/config/routes.rb",
+		"/C/vagrant/projects/sample_app/app/views/static_pages/_logged_in_user.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/shared/_stats.html.erb",
+		"/C/vagrant/projects/sample_app/app/assets/stylesheets/custom.css.scss",
+		"/C/vagrant/projects/sample_app/db/seeds.rb",
+		"/C/vagrant/projects/sample_app/test/models/relationship_test.rb",
+		"/C/vagrant/projects/sample_app/test/models/micropost_test.rb",
+		"/C/vagrant/projects/sample_app/app/views/static_pages/home.html.erb",
+		"/C/vagrant/projects/sample_app/app/models/relationship.rb",
+		"/C/vagrant/projects/sample_app/db/migrate/20150608205156_create_relationships.rb",
+		"/C/vagrant/projects/sample_app/app/views/static_pages/_guest_user.html.erb",
+		"/C/vagrant/projects/sample_app/Gemfile",
+		"/C/vagrant/projects/sample_app/app/models/micropost.rb",
+		"/C/vagrant/projects/sample_app/app/views/shared/_micropost_form.html.erb",
+		"/C/vagrant/projects/sample_app/app/uploaders/picture_uploader.rb",
+		"/C/vagrant/projects/sample_app/test/integration/microposts_interface_test.rb",
+		"/C/vagrant/projects/sample_app/app/controllers/static_pages_controller.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/index.html.erb",
+		"/C/vagrant/projects/sample_app/test/controllers/microposts_controller_test.rb",
+		"/C/vagrant/projects/sample_app/test/fixtures/microposts.yml",
+		"/C/vagrant/projects/sample_app/app/views/shared/_feed.html.erb",
+		"/C/vagrant/projects/sample_app/test/integration/site_layout_test.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/_fields.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/shared/_error_messages.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/users/new.html.erb",
+		"/C/vagrant/projects/sample_app/app/controllers/application_controller.rb",
+		"/C/vagrant/projects/sample_app/app/views/shared/_user_info.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/users/edit.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/password_resets/edit.html.erb",
+		"/C/vagrant/projects/sample_app/test/integration/users_profile_test.rb",
+		"/C/vagrant/projects/sample_app/app/views/microposts/_microposts.html.erb",
+		"/C/vagrant/projects/sample_app/db/migrate/20150605211809_create_microposts.rb",
+		"/C/vagrant/projects/sample_app/test/integration/password_resets_test.rb",
+		"/C/vagrant/projects/sample_app/app/controllers/password_resets_controller.rb",
+		"/C/vagrant/projects/sample_app/test/mailers/user_mailer_test.rb",
+		"/C/vagrant/projects/sample_app/app/views/user_mailer/password_reset.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/user_mailer/password_reset.text.erb",
+		"/C/vagrant/projects/sample_app/test/mailers/previews/user_mailer_preview.rb",
+		"/C/vagrant/projects/sample_app/app/mailers/user_mailer.rb",
+		"/C/vagrant/projects/sample_app/app/views/password_resets/new.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/sessions/new.html.erb",
+		"/C/vagrant/projects/sample_app/app/controllers/account_activations_controller.rb",
+		"/C/vagrant/projects/sample_app/test/integration/users_signup_test.rb",
+		"/C/vagrant/projects/sample_app/app/controllers/sessions_controller.rb",
+		"/C/vagrant/projects/sample_app/app/helpers/sessions_helper.rb",
+		"/C/vagrant/projects/sample_app/config/environments/test.rb",
+		"/C/vagrant/projects/sample_app/config/locales/en.yml",
+		"/C/vagrant/projects/sample_app/config/environments/development.rb",
+		"/C/vagrant/projects/sample_app/app/views/user_mailer/account_activation.text.erb",
+		"/C/vagrant/projects/sample_app/app/views/user_mailer/account_activation.html.erb",
+		"/C/vagrant/projects/sample_app/db/migrate/20150603175502_add_activation_to_users.rb",
+		"/C/vagrant/projects/sample_app/test/test_helper.rb",
+		"/C/vagrant/projects/sample_app/test/integration/users_edit_test.rb",
+		"/C/vagrant/projects/sample_app/app/helpers/users_helper.rb",
+		"/C/vagrant/projects/sample_app/db/migrate/20150602180704_add_admin_to_users.rb",
+		"/C/vagrant/projects/sample_app/test/integration/users_index_test.rb",
+		"/C/vagrant/projects/sample_app/app/views/users/_user.html.erb",
+		"/C/vagrant/projects/sample_app/app/views/layouts/_header.html.erb",
+		"/C/vagrant/projects/sample_app/test/integration/users_login_test.rb",
+		"/C/vagrant/projects/sample_app/test/helpers/sessions_helper_test.rb",
+		"/C/vagrant/projects/sample_app/app/assets/javascripts/application.js",
+		"/C/vagrant/projects/sample_app/config/environments/production.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/controllers/static_pages_controller.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/controllers/users_controller.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/test/integration/site_layout_test.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/test/helpers/application_helper_test.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/test/test_helper.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/helpers/application_helper.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/test/controllers/users_controller_test.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/test/controllers/static_pages_controller_test.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/layouts/_header.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/users/new.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/config/routes.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/static_pages/home.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/static_pages/contact.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/layouts/_footer.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/layouts/_shim.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/layouts/application.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/assets/stylesheets/application.css",
+		"/C/vagrant/vagrant_rails/projects/sample_app/Gemfile",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/assets/stylesheets/custom.css.scss",
+		"/C/vagrant/vagrant_rails/projects/sample_app/app/views/static_pages/about.html.erb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/config/initializers/backtrace_silencers.rb",
+		"/C/vagrant/vagrant_rails/projects/sample_app/Guardfile",
+		"/C/vagrant/vagrant_rails/Vagrantfile",
+		"/C/vagrant/vagrant_rails/projects/sample_app/Gemfile.lock",
+		"/C/vagrant/vagrant_rails/projects/toy_app/app/models/user.rb",
+		"/C/vagrant/vagrant_rails/projects/toy_app/app/models/micropost.rb",
+		"/C/vagrant/vagrant_rails/projects/toy_app/config/routes.rb",
+		"/C/vagrant/projects/hello_app/Gemfile"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\vagrant\\projects\\sample_app"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Relationship.count",
+			"title",
+			"@title",
+			"this_",
+			"log_in_as",
+			"light-g",
+			"777",
+			"#77"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"@user.following.count"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/layouts/_header.html.erb",
+					"settings":
+					{
+						"buffer_size": 1659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1659,
+								1659
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/notes/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 76,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								56
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/notes_controller.rb",
+					"settings":
+					{
+						"buffer_size": 750,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								254
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/notes/new.html.erb",
+					"settings":
+					{
+						"buffer_size": 286,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								242
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/shared/_error_messages.html.erb",
+					"settings":
+					{
+						"buffer_size": 308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								308,
+								308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true
+}
