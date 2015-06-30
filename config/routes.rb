@@ -33,8 +33,8 @@ Rails.application.routes.draw do
   #   end
 
   # Example resource route with more complex sub-resources:
-  #   resources :products do
   #     resources :comments
+  #   resources :products do
   #     resources :sales do
   #       get 'recent', on: :collection
   #     end
@@ -54,5 +54,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :notes
+  resources :notes do
+    resources :comments
+  end
+
+
 end

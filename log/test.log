@@ -125,3 +125,301 @@ Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.2ms)
 NoteTest: test_title_and_text_should_be_present
 -----------------------------------------------
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" text, "note_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (6.7ms)[0m  [1mCREATE  INDEX "index_comments_on_note_id" ON "comments" ("note_id")[0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (6.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (3.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150629215110')
+  [1m[36m (9.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150618222207')[0m
+  [1m[35m (6.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150629190708')
+  [1m[35mActiveRecord::SchemaMigration Load (1.9ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (3.1ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (1.8ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-06-29 23:24:33', '2015-06-29 23:24:33', 980190962, 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-06-29 23:24:33', '2015-06-29 23:24:33', 298486374, 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-06-29 23:24:33', '2015-06-29 23:24:33', 113629430, 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:24:33', '2015-06-29 23:24:33', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:24:33', '2015-06-29 23:24:33', 298486374)
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+CommentTest: test_text_should_be_present
+----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 23:24:33 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (13.6ms)
+  Rendered notes/new.html.erb within layouts/application (118.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 10092ms (Views: 10060.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 23:24:43 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shared/_error_messages.html.erb (1.9ms)
+  Rendered notes/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "notes"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (3.6ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (1.1ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-06-29 23:26:42', '2015-06-29 23:26:42', 980190962, 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-06-29 23:26:42', '2015-06-29 23:26:42', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-06-29 23:26:42', '2015-06-29 23:26:42', 113629430, 298486374)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:26:43', '2015-06-29 23:26:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:26:43', '2015-06-29 23:26:43', 298486374)[0m
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 23:26:43 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (14.1ms)
+  Rendered notes/new.html.erb within layouts/application (132.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 1207ms (Views: 1177.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 23:26:44 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (1.7ms)
+  Rendered notes/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35mNote Load (1.6ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+CommentTest: test_text_should_be_present
+----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (3.0ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (7.6ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-06-29 23:27:59', '2015-06-29 23:27:59', 980190962, 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-06-29 23:27:59', '2015-06-29 23:27:59', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-06-29 23:27:59', '2015-06-29 23:27:59', 113629430, 298486374)
+  [1m[36mFixture Delete (4.4ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:27:59', '2015-06-29 23:27:59', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:27:59', '2015-06-29 23:27:59', 298486374)[0m
+  [1m[35m (5.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 23:27:59 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (12.8ms)
+  Rendered notes/new.html.erb within layouts/application (126.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 1197ms (Views: 1168.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 23:28:00 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (3.6ms)
+  Rendered notes/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 15ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35mNote Load (3.0ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  begin transaction
+----------------------------------------
+CommentTest: test_text_should_be_present
+----------------------------------------
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (3.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-06-29 23:30:06', '2015-06-29 23:30:06', 980190962, 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-06-29 23:30:06', '2015-06-29 23:30:06', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-06-29 23:30:06', '2015-06-29 23:30:06', 113629430, 298486374)
+  [1m[36mFixture Delete (0.9ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:30:06', '2015-06-29 23:30:06', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:30:06', '2015-06-29 23:30:06', 298486374)[0m
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 23:30:06 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (13.5ms)
+  Rendered notes/new.html.erb within layouts/application (122.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 1210ms (Views: 1158.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 23:30:07 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (1.9ms)
+  Rendered notes/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35mNote Load (1.9ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (1.7ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-06-29 23:30:31', '2015-06-29 23:30:31', 980190962, 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-06-29 23:30:31', '2015-06-29 23:30:31', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-06-29 23:30:31', '2015-06-29 23:30:31', 113629430, 298486374)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:30:31', '2015-06-29 23:30:31', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:30:31', '2015-06-29 23:30:31', 298486374)[0m
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 23:30:31 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (13.9ms)
+  Rendered notes/new.html.erb within layouts/application (116.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 1184ms (Views: 1154.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 23:30:32 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (5.0ms)
+  Rendered notes/new.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35mNote Load (1.8ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (2.8ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-06-29 23:31:03', '2015-06-29 23:31:03', 980190962, 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-06-29 23:31:03', '2015-06-29 23:31:03', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-06-29 23:31:03', '2015-06-29 23:31:03', 113629430, 298486374)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:31:03', '2015-06-29 23:31:03', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:31:03', '2015-06-29 23:31:03', 298486374)[0m
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35mNote Load (1.9ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 23:31:03 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered notes/new.html.erb within layouts/application (101.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 1206ms (Views: 1175.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 23:31:04 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered shared/_error_messages.html.erb (2.9ms)
+  Rendered notes/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "notes"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (3.0ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (1.3ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-06-29 23:31:57', '2015-06-29 23:31:57', 980190962, 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-06-29 23:31:57', '2015-06-29 23:31:57', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-06-29 23:31:57', '2015-06-29 23:31:57', 113629430, 298486374)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "notes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:31:57', '2015-06-29 23:31:57', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2015-06-29 23:31:57', '2015-06-29 23:31:57', 298486374)[0m
+  [1m[35m (4.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------
+NotesTest: test_invalid_note
+----------------------------
+Started GET "/notes/new" for 127.0.0.1 at 2015-06-29 23:31:57 +0000
+Processing by NotesController#new as HTML
+  Rendered shared/_error_messages.html.erb (13.4ms)
+  Rendered notes/new.html.erb within layouts/application (135.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 1222ms (Views: 1193.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/notes" for 127.0.0.1 at 2015-06-29 23:31:58 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"title"=>"", "text"=>""}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (1.7ms)
+  Rendered notes/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+CommentTest: test_text_should_be_present
+----------------------------------------
+  [1m[35mNote Load (1.7ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+NoteTest: test_title_and_text_should_be_present
+-----------------------------------------------
+  [1m[35mNote Load (1.6ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

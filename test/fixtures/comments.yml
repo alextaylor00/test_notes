@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: "Test comment, hey-o"
+  note: one
+
+two:
+  text: "La dee da"
+  note: one
+
+three:
+  text: "Ayyooo"
+  note: two

@@ -3,8 +3,7 @@ require 'test_helper'
 class NoteTest < ActiveSupport::TestCase
 
   def setup
-    @note = Note.new(title: "test", text: "test")
-
+    @note = notes(:one)
   end
 
   test "title and text should be present" do

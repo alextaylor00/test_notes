@@ -1,2 +1,14 @@
 <%= render @note %>
+<div class="container">
+  <h3>Comments</h3>
+  <%= render @note.comments %>
+
+  <h3>New Comment</h3>
+  <%= form_for [@note, @comment] do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.text_area :text, class: 'form-control' %>
+
+      <%= f.submit 'Reply', class: "btn btn-primary" %>
+  <% end %>
+</div>
 <p><%= link_to "Back", notes_path %></p>
