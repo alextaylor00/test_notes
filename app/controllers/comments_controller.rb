@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @note
     else
-      render 'note/show'
+      render 'notes/show'
     end
   end
 
