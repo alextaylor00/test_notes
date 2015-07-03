@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Scaffold Tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scaffold_tests.each do |scaffold_test| %>
+      <tr>
+        <td><%= scaffold_test.text %></td>
+        <td><%= scaffold_test.score %></td>
+        <td><%= link_to 'Show', scaffold_test %></td>
+        <td><%= link_to 'Edit', edit_scaffold_test_path(scaffold_test) %></td>
+        <td><%= link_to 'Destroy', scaffold_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scaffold test', new_scaffold_test_path %>
