@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   #   end
 
   resources :notes do
+    get 'new_with_file', on: :collection
     resources :comments
   end
 

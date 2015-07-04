@@ -16,6 +16,14 @@ class NotesController < ApplicationController
     @note = Note.new
   end
 
+	# Builds a new note with a view that gives the option to create
+	#   a note with a file
+	# TODO: this should be built into 'new', no point in having a
+	#   separate controller
+	def new_with_file
+		@note = Note.new
+	end
+
   # Creates a new note in the database
   def create
   	@note = Note.new(note_params)
@@ -52,7 +60,7 @@ class NotesController < ApplicationController
 			end
 
 	    def note_params
-        params.require(:note).permit(:title, :text) # whitelist the params to prevent the params from passing any dangerous attributes
+        params.require(:note).permit(:title, :text, :text_file) # Whitelist the params to prevent the params from passing any dangerous attributes
 	    end
 
 end

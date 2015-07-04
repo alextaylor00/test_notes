@@ -1,0 +1,11 @@
+<p><%= link_to "New note from text", new_note_path %></p>
+<%= form_for(@note, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+
+    <%= f.label :text_file %>
+    <%= f.file_field :text_file %>
+
+    <%= f.submit 'Post', class: "btn btn-primary" %>
+<% end %>
