@@ -1,6 +1,6 @@
 # Stores notes. Notes are parents of comments.
 class Note < ActiveRecord::Base
-
+  belongs_to :project
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true
