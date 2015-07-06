@@ -16,14 +16,6 @@ class NotesController < ApplicationController
     @note = Note.new
   end
 
-	# Builds a new note with a view that gives the option to create
-	#   a note with a file
-	# TODO: this should be built into 'new', no point in having a
-	#   separate controller
-	def new_with_file
-		@note = Note.new
-	end
-
   # Creates a new note in the database
   def create
   	@note = Note.new(note_params)
