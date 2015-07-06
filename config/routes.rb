@@ -1,24 +1,18 @@
 Rails.application.routes.draw do
-  get 'projects/index'
-
-  get 'projects/show'
-
-  get 'projects/new'
-
-  get 'projects/edit'
-
-  get 'projects/create'
-
-  get 'projects/update'
-
-  get 'projects/destroy'
-
   resources :scaffold_tests
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'notes#index'
+
+  resources :projects do
+    resources :notes, only: [:index]
+  end
+
+  resources :notes do
+    resources :comments, only: [:create]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -69,10 +63,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :notes do
-    get 'new_with_file', on: :collection
-    resources :comments
-  end
 
 
 end

@@ -1,2 +1,8 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+<h1>New Project</h1>
+<%= form_for(@project) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <%= f.submit 'Create', class: "btn btn-primary" %>
+<% end %>

@@ -36,4 +36,8 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should require name to be present" do
+
+  end
+
 end

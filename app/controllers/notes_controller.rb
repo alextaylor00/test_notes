@@ -24,7 +24,7 @@ class NotesController < ApplicationController
 	    flash[:success] = "Note saved."
 	    redirect_to note_path(@note)
     else
-	    render 'new' # the error messages partial will do the rest
+	    render "new" # the error messages partial will do the rest
     end
   end
 
