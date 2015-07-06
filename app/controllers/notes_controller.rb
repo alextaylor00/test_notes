@@ -52,7 +52,7 @@ class NotesController < ApplicationController
 			end
 
 	    def note_params
-        params.require(:note).permit(:title, :text) # whitelist the params to prevent the params from passing any dangerous attributes
+        params.require(:note).permit(:title, :text, :text_file) # Whitelist the params to prevent the params from passing any dangerous attributes
 	    end
 
 end
