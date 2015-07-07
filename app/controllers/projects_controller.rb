@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    render "index"
   end
 
   def create
@@ -26,9 +27,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    render "index"
   end
 
   def destroy
+    render "index"
   end
 
   private

@@ -16,4 +16,9 @@ class ProjectTest < ActiveSupport::TestCase
     assert_not proj.valid?
   end
 
+  test "project name shouldn't be blank" do
+    proj = Project.create(name: "")
+    assert_not proj.valid?
+  end
+
 end

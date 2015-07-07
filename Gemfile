@@ -50,4 +50,7 @@ end
 group :test do
   # Colourizes the output of tests, among other things
   gem 'minitest-reporters'
+
+  # For silencing the backtrace of tests
+  gem 'mini_backtrace'
 end
