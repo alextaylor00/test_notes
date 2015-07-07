@@ -3,7 +3,19 @@
 one:
   title: MyString
   text: MyText
+  project: one
 
 two:
   title: MyString
   text: MyText
+  project: one
+
+three:
+  title: Test note
+  text: This is a test
+  project: two
+
+four:
+  title: Another test note
+  text: Whoa, testing
+  project: three

@@ -13,7 +13,8 @@ class NotesController < ApplicationController
 
   # Builds a new note.
   def new
-    @note = Note.new
+		@project = Project.find(params[:project_id])
+    @note = @project.notes.build
   end
 
   # Creates a new note in the database
@@ -24,6 +25,7 @@ class NotesController < ApplicationController
 	    flash[:success] = "Note saved."
 	    redirect_to note_path(@note)
     else
+			@project = Project.find(params[:project_id])
 	    render "new" # the error messages partial will do the rest
     end
   end
@@ -42,7 +44,7 @@ class NotesController < ApplicationController
 
 	def destroy
 		if @note.destroy
-			redirect_to notes_path, notice: "Note deleted."
+			redirect_to project_path(@note.project), notice: "Note deleted."
 		end
 	end
 
@@ -52,7 +54,7 @@ class NotesController < ApplicationController
 			end
 
 	    def note_params
-        params.require(:note).permit(:title, :text, :text_file) # Whitelist the params to prevent the params from passing any dangerous attributes
+        params.require(:note).permit(:project, :title, :text) # Whitelist the params to prevent the params from passing any dangerous attributes
 	    end
 
 end

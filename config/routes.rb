@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
-  resources :scaffold_tests
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'notes#index'
 
-  resources :projects do
-    resources :notes, only: [:index]
+  resources :projects, shallow: true do
+    resources :notes do
+      resources :comments
+    end
   end
 
-  resources :notes do
-    resources :comments, only: [:create]
-  end
+  resources :scaffold_tests
+
+  # resources :notes, only: [:create, ] do
+  #   resources :comments, only: [:create]
+  # end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

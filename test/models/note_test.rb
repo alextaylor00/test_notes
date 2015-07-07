@@ -6,10 +6,15 @@ class NoteTest < ActiveSupport::TestCase
     @note = notes(:one)
   end
 
-  test "title and text should be present" do
+  test "project, title and text should be present" do
+    assert @note.valid?
+
     @note.title = ""
     @note.text = ""
+    @note.project = nil
     assert_not @note.valid?
   end
+
+
 
 end

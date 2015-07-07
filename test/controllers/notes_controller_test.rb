@@ -5,17 +5,6 @@ class NotesControllerTest < ActionController::TestCase
     @note = notes(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:notes)
-  end
-
-  test "should get new note" do
-    get :new
-    assert_response :success
-  end
-
   test "should show a specific note" do
     get :show, id: @note
     assert_response :success
@@ -25,7 +14,8 @@ class NotesControllerTest < ActionController::TestCase
 
   test "should create a new note" do
     assert_difference 'Note.count' do
-      post :create, note: { title: "Test title", text: "Test text" }
+      post :create, project_id: projects(:one),
+                    note: { title: "Test title", text: "Test text" }
     end
 
     assert_redirected_to note_path(assigns(:note))
@@ -46,7 +36,7 @@ class NotesControllerTest < ActionController::TestCase
       delete :destroy, id: @note
     end
 
-    assert_redirected_to notes_path
+    assert_redirected_to project_path(@note.project)
   end
 
 

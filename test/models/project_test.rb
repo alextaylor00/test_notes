@@ -21,4 +21,9 @@ class ProjectTest < ActiveSupport::TestCase
     assert_not proj.valid?
   end
 
+  test "project should contain notes" do
+    project = projects(:one)
+    assert_equal 2, project.notes.count
+  end
+
 end

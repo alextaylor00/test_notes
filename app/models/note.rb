@@ -3,6 +3,7 @@ class Note < ActiveRecord::Base
   belongs_to :project
   has_many :comments, dependent: :destroy
 
+  validates :project, presence: true
   validates :title, presence: true
   validates :text, presence: true
 

@@ -7,11 +7,14 @@ class NotesTest < ActionDispatch::IntegrationTest
   end
 
   test "invalid note" do
-    get new_note_path
+    project = projects(:one)
+    get new_project_note_path(project)
     assert_template 'notes/new'
     assert_no_difference 'Note.count' do
-      post notes_path, note: {  title: "",
-                                text: "" }
+      post project_notes_path(project), note: {  project_id: project,
+                                                 title: "",
+                                                 text: "",
+                                              }
     end
 
     assert_template 'notes/new'
