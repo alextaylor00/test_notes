@@ -1,16 +1,48 @@
-<p><%= link_to "Edit Note", edit_note_path(@note) %></p>
-<p><%= link_to "Delete Note", @note, method: :delete %></p>
-<%= render @note %>
-<div class="container">
-  <h3>Comments</h3>
-  <%= render @note.comments %>
+<div class="row">
+  <div class="col-sm-10 main">
+    <p class="page-header"><%= link_to raw("&laquo; #{@note.project.name}"), project_path(@note.project) %></p>
 
-  <h3>New Comment</h3>
-  <%= form_for [@note, @comment] do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <%= f.text_area :text, class: 'form-control' %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3><%= @note.title %></h3>
+      </div>
+      <div class="panel-body">
+        <%= simple_format(@note.text) %>
+      </div>
+    </div>
 
-      <%= f.submit 'Reply', class: "btn btn-primary" %>
-  <% end %>
+
+    <% if @note.comments.count > 0 %>
+      <div class="page-header">
+        <h3>Comments</h3>
+      </div>
+      <%= render @note.comments %>
+    <% end %>
+
+    <div class="page-header">
+      <h3>New Comment</h3>
+    </div>
+
+    <%= form_for [@note, @comment] do |f| %>
+        <div class="form-group">
+          <%= render 'shared/error_messages', object: f.object %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_area :text, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit 'Reply', class: "btn btn-primary" %>
+        </div>
+
+    <% end %>
+
+  </div>
+  <div class="col-sm-2 sidebar">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><%= link_to "Edit Note", edit_note_path(@note) %></li>
+      <li><%= link_to "Delete Note", @note, method: :delete %></li>
+    </ul>
+  </div>
 </div>
-<p><%= link_to "Back", project_path(@note.project) %></p>

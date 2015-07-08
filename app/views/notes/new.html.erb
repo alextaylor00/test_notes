@@ -1,1 +1,8 @@
-<%= render 'notes/note_form' %>
+<div class="row">
+  <div class="col-sm-12 main">
+    <h2 class="page-header"><%= link_to @project.name, project_path(@project) %> <small>New Note</small></h2>
+
+    <%= render 'notes/note_form' %>
+
+  </div>
+</div>

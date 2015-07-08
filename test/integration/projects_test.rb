@@ -40,5 +40,13 @@ class ProjectsTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", new_project_note_path(project)
   end
 
+  test "projects show page should display all notes" do
+    project = projects(:one)
+    get project_path(project)
+    project.notes.each do |note|
+      assert_match note.title, response.body
+    end
+  end
+
 
 end

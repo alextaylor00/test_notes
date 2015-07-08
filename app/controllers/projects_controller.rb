@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project_ivar, only: [:show, :edit, :update, :destroy]
 
+  helper NotesHelper # to show previews of text
+
   def index
     @projects = Project.all
   end

@@ -13,8 +13,7 @@ class NotesTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Note.count' do
       post project_notes_path(project), note: {  project_id: project,
                                                  title: "",
-                                                 text: "",
-                                              }
+                                                 text: "" }
     end
 
     assert_template 'notes/new'
@@ -27,8 +26,7 @@ class NotesTest < ActionDispatch::IntegrationTest
     assert_difference 'Note.count', 1 do
       post project_notes_path(project), note: {  project_id: project,
                                                  title: "Test Note",
-                                                 text: "Example text",
-                                              }
+                                                 text: "Example text" }
     end
 
     follow_redirect!
