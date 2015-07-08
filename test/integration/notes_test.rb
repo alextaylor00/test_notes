@@ -6,7 +6,7 @@ class NotesTest < ActionDispatch::IntegrationTest
     @test_note = notes(:one)
   end
 
-  test "invalid note" do
+  test "shouldn't create an invalid note" do
     project = projects(:one)
     get new_project_note_path(project)
     assert_template 'notes/new'
@@ -19,6 +19,22 @@ class NotesTest < ActionDispatch::IntegrationTest
 
     assert_template 'notes/new'
   end
+
+  test "should create a valid note" do
+    project = projects(:one)
+    get new_project_note_path(project)
+    assert_template 'notes/new'
+    assert_difference 'Note.count', 1 do
+      post project_notes_path(project), note: {  project_id: project,
+                                                 title: "Test Note",
+                                                 text: "Example text",
+                                              }
+    end
+
+    follow_redirect!
+    assert_template "notes/show"
+  end
+
 
   test "submitting a comment with text works" do
       get note_path(@test_note)

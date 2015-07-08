@@ -19,13 +19,13 @@ class NotesController < ApplicationController
 
   # Creates a new note in the database
   def create
-  	@note = Note.new(note_params)
-
+		@project = Project.find(params[:project_id])
+  	@note = @project.notes.build(note_params)
+	
     if @note.save
 	    flash[:success] = "Note saved."
 	    redirect_to note_path(@note)
     else
-			@project = Project.find(params[:project_id])
 	    render "new" # the error messages partial will do the rest
     end
   end
@@ -54,7 +54,7 @@ class NotesController < ApplicationController
 			end
 
 	    def note_params
-        params.require(:note).permit(:project, :title, :text) # Whitelist the params to prevent the params from passing any dangerous attributes
+        params.require(:note).permit(:title, :text) # Whitelist the params to prevent the params from passing any dangerous attributes
 	    end
 
 end

@@ -12,15 +12,6 @@ class NotesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:comment)
   end
 
-  test "should create a new note" do
-    assert_difference 'Note.count' do
-      post :create, project_id: projects(:one),
-                    note: { title: "Test title", text: "Test text" }
-    end
-
-    assert_redirected_to note_path(assigns(:note))
-  end
-
   test "should get edit note" do
     get :edit, id: @note
     assert_response :success

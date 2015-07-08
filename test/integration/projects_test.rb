@@ -40,7 +40,5 @@ class ProjectsTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", new_project_note_path(project)
   end
 
-  test "should be able to create new note" do
-  end
 
 end
