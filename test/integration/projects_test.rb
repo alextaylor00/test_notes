@@ -4,9 +4,11 @@ class ProjectsTest < ActionDispatch::IntegrationTest
   test "project index should display all projects" do
     get projects_path
     assert_template 'projects/index'
-    assert_select "li", projects(:one).name
-    assert_select "li", projects(:two).name
-    assert_select "li", projects(:three).name
+
+    projects.each do |project|
+      assert_match project.name, response.body
+    end
+
   end
 
   test "project index should contain link to new project" do

@@ -21,7 +21,7 @@ class NotesController < ApplicationController
   def create
 		@project = Project.find(params[:project_id])
   	@note = @project.notes.build(note_params)
-	
+
     if @note.save
 	    flash[:success] = "Note saved."
 	    redirect_to note_path(@note)
@@ -31,13 +31,16 @@ class NotesController < ApplicationController
   end
 
 	def edit
+		@project = @note.project
 	end
 
 	def update
 		if @note.update(note_params)
-			redirect_to note_path(@note), notice: "Success!"
+			flash[:info] = "Note updated."
+			redirect_to note_path(@note)
 		else
-			redirect_to note_path(@note), notice: "Error updating note"
+			flash[:warning] = "Error updating note."
+			redirect_to note_path(@note)
 		end
 
 	end

@@ -1,4 +1,11 @@
-<%= form_for [@project, @note] do |f| %>
+<% if local_assigns[:edit] %>
+  <% url = note_path %>
+<% else %>
+  <% url = project_notes_path %>
+<% end %>
+
+<%= form_for [@project, @note], url: url do |f| %>
+
     <div class="form-group">
       <%= render 'shared/error_messages', object: f.object %>
     </div>
