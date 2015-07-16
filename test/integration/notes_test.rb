@@ -49,6 +49,13 @@ class NotesTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Comment.count' do
       post note_comments_path(@test_note), comment: { text: "" }
     end
+    
+  end
+
+  test "BUGFIX: new comment object is displayed below existing comments" do
+    note_with_one_comment = notes(:note_with_one_comment)
+    get note_path(note_with_one_comment)
+    assert_select "#comment", 1
   end
 
 end

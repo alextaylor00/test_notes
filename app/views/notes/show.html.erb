@@ -14,9 +14,9 @@
 
     <% if @note.comments.count > 0 %>
       <div class="page-header">
-        <h3>Comments</h3>
+        <h3>Comments (<%= @note.comments.count %>)</h3>
       </div>
-      <%= render @note.comments %>
+      <%= render @comments_to_display %>
     <% end %>
 
     <div class="page-header">

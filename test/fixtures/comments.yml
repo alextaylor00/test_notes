@@ -11,3 +11,7 @@ two:
 three:
   text: "Ayyooo"
   note: two
+
+four:
+  text: "I am the only comment on note_with_one_comment"
+  note: note_with_one_comment

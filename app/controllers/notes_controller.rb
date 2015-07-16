@@ -9,6 +9,7 @@ class NotesController < ApplicationController
 	# Shows a specific note.
 	def show
 		@comment = @note.comments.build
+		@comments_to_display = @note.comments.persisted
 	end
 
   # Builds a new note.
