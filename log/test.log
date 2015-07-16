@@ -32545,3 +32545,284 @@ Redirected to http://www.example.com/notes/980190962
 Completed 302 Found in 10ms (ActiveRecord: 3.3ms)
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
   [1m[35m (3.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (3.8ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 980190962, 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 113629430, 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('I am the only comment on note_with_one_comment', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 281110143, 480050258)[0m
+  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('MyString', 'MyText', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 980190962, 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('MyString', 'MyText', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 298486374, 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('Test note', 'This is a test', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 113629430, 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('Another test note', 'Whoa, testing', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 281110143, 113629430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('This note should have one comment', 'This note should only have one comment.', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 480050258, 980190962)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "projects"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "created_at", "updated_at", "id") VALUES ('Project One', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "projects" ("name", "created_at", "updated_at", "id") VALUES ('Project Two', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "projects" ("name", "created_at", "updated_at", "id") VALUES ('Project Three', '2015-07-16 20:51:32', '2015-07-16 20:51:32', 113629430)[0m
+  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "scaffold_tests"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "scaffold_tests" ("text", "score", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2015-07-16 20:51:32', '2015-07-16 20:51:32', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "scaffold_tests" ("text", "score", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2015-07-16 20:51:32', '2015-07-16 20:51:32', 298486374)
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------
+NotesTest: test_can't_submit_a_blank_comment
+--------------------------------------------
+  [1m[36mNote Load (2.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Started GET "/notes/980190962" for 127.0.0.1 at 2015-07-16 20:51:33 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+------------------------------------------------
+NotesTest: test_shouldn't_create_an_invalid_note
+------------------------------------------------
+  [1m[36mNote Load (2.0ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 980190962]]
+Started GET "/projects/980190962/notes/new" for 127.0.0.1 at 2015-07-16 20:51:33 +0000
+Processing by NotesController#new as HTML
+  Parameters: {"project_id"=>"980190962"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered shared/_error_messages.html.erb (10.2ms)
+  Rendered notes/_note_form.html.erb (106.5ms)
+  Rendered notes/new.html.erb within layouts/application (150.7ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 1348ms (Views: 1251.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/projects/980190962/notes" for 127.0.0.1 at 2015-07-16 20:51:34 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"project_id"=>"#<Project:0x00000005736540>", "title"=>"", "text"=>""}, "project_id"=>"980190962"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Unpermitted parameter: project_id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "notes" ("title", "text", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["text", ""], ["project_id", 980190962], ["created_at", "2015-07-16 20:51:34.648050"], ["updated_at", "2015-07-16 20:51:34.648050"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/notes/980190963
+Completed 302 Found in 11ms (ActiveRecord: 4.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (3.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------------------------
+NotesTest: test_BUGFIX:_new_comment_object_is_displayed_below_existing_comments
+-------------------------------------------------------------------------------
+  [1m[35mNote Load (2.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 480050258]]
+Started GET "/notes/480050258" for 127.0.0.1 at 2015-07-16 20:51:34 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"480050258"}
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 480050258]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+NotesTest: test_should_create_a_valid_note
+------------------------------------------
+  [1m[36mNote Load (1.7ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 980190962]]
+Started GET "/projects/980190962/notes/new" for 127.0.0.1 at 2015-07-16 20:51:34 +0000
+Processing by NotesController#new as HTML
+  Parameters: {"project_id"=>"980190962"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/_note_form.html.erb (3.1ms)
+  Rendered notes/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/projects/980190962/notes" for 127.0.0.1 at 2015-07-16 20:51:34 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"project_id"=>"#<Project:0x000000082e0fd8>", "title"=>"Test Note", "text"=>"Example text"}, "project_id"=>"980190962"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Unpermitted parameter: project_id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "notes" ("title", "text", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Test Note"], ["text", "Example text"], ["project_id", 980190962], ["created_at", "2015-07-16 20:51:34.717221"], ["updated_at", "2015-07-16 20:51:34.717221"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/notes/980190963
+Completed 302 Found in 11ms (ActiveRecord: 3.8ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+Started GET "/notes/980190963" for 127.0.0.1 at 2015-07-16 20:51:34 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"980190963"}
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190963]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+  [1m[36m (3.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (3.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Test comment, hey-o', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 980190962, 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('La dee da', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 298486374, 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('Ayyooo', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 113629430, 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("text", "created_at", "updated_at", "id", "note_id") VALUES ('I am the only comment on note_with_one_comment', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 281110143, 480050258)[0m
+  [1m[35mFixture Delete (0.8ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('MyString', 'MyText', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 980190962, 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('MyString', 'MyText', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 298486374, 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('Test note', 'This is a test', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 113629430, 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('Another test note', 'Whoa, testing', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 281110143, 113629430)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("title", "text", "created_at", "updated_at", "id", "project_id") VALUES ('This note should have one comment', 'This note should only have one comment.', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 480050258, 980190962)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "projects"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "projects" ("name", "created_at", "updated_at", "id") VALUES ('Project One', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "projects" ("name", "created_at", "updated_at", "id") VALUES ('Project Two', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 298486374)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "projects" ("name", "created_at", "updated_at", "id") VALUES ('Project Three', '2015-07-16 20:52:21', '2015-07-16 20:52:21', 113629430)[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "scaffold_tests"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "scaffold_tests" ("text", "score", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2015-07-16 20:52:21', '2015-07-16 20:52:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "scaffold_tests" ("text", "score", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2015-07-16 20:52:21', '2015-07-16 20:52:21', 298486374)
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------------------------------
+NotesTest: test_BUGFIX:_new_comment_object_is_displayed_below_existing_comments
+-------------------------------------------------------------------------------
+  [1m[36mNote Load (1.9ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 480050258]]
+Started GET "/notes/480050258" for 127.0.0.1 at 2015-07-16 20:52:22 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"480050258"}
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ?  ORDER BY "notes"."created_at" DESC LIMIT 1[0m  [["id", 480050258]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."note_id" = ?  ORDER BY "comments"."created_at" ASC  [["note_id", 480050258]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?  [["note_id", 480050258]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?[0m  [["note_id", 480050258]]
+  Rendered comments/_comment.html.erb (1.7ms)
+  Rendered shared/_error_messages.html.erb (9.4ms)
+  Rendered notes/show.html.erb within layouts/application (174.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 1402ms (Views: 1308.8ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+NotesTest: test_can't_submit_a_blank_comment
+--------------------------------------------
+  [1m[35mNote Load (1.8ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+Started GET "/notes/980190962" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ?  ORDER BY "notes"."created_at" DESC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."note_id" = ?  ORDER BY "comments"."created_at" ASC  [["note_id", 980190962]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?  [["note_id", 980190962]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?[0m  [["note_id", 980190962]]
+  Rendered comments/_comment.html.erb (2.1ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/show.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments"
+Started POST "/notes/980190962/comments" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"text"=>""}, "note_id"=>"980190962"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ?  ORDER BY "notes"."created_at" DESC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."note_id" = ?  ORDER BY "comments"."created_at" ASC  [["note_id", 980190962]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?  [["note_id", 980190962]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?[0m  [["note_id", 980190962]]
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered notes/show.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 69ms (Views: 34.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  begin transaction
+------------------------------------------
+NotesTest: test_should_create_a_valid_note
+------------------------------------------
+  [1m[36mNote Load (1.9ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mProject Load (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 980190962]]
+Started GET "/projects/980190962/notes/new" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by NotesController#new as HTML
+  Parameters: {"project_id"=>"980190962"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/_note_form.html.erb (28.4ms)
+  Rendered notes/new.html.erb within layouts/application (52.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 133ms (Views: 79.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "notes"
+Started POST "/projects/980190962/notes" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"project_id"=>"#<Project:0x00000004ab7da0>", "title"=>"Test Note", "text"=>"Example text"}, "project_id"=>"980190962"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Unpermitted parameter: project_id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.3ms)[0m  [1mINSERT INTO "notes" ("title", "text", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Test Note"], ["text", "Example text"], ["project_id", 980190962], ["created_at", "2015-07-16 20:52:23.879385"], ["updated_at", "2015-07-16 20:52:23.879385"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/notes/980190963
+Completed 302 Found in 14ms (ActiveRecord: 4.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+Started GET "/notes/980190963" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"980190963"}
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ?  ORDER BY "notes"."created_at" DESC LIMIT 1  [["id", 980190963]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."note_id" = ?  ORDER BY "comments"."created_at" ASC[0m  [["note_id", 980190963]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?[0m  [["note_id", 980190963]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/show.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (3.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+NotesTest: test_submitting_a_comment_with_text_works
+----------------------------------------------------
+  [1m[35mNote Load (1.9ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+Started GET "/notes/980190962" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ?  ORDER BY "notes"."created_at" DESC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."note_id" = ?  ORDER BY "comments"."created_at" ASC  [["note_id", 980190962]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?  [["note_id", 980190962]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."note_id" = ?[0m  [["note_id", 980190962]]
+  Rendered comments/_comment.html.erb (1.7ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/show.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 11.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments"
+Started POST "/notes/980190962/comments" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"text"=>"hey i'm text"}, "note_id"=>"980190962"}
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes" WHERE "notes"."id" = ?  ORDER BY "notes"."created_at" DESC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO "comments" ("text", "note_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "hey i'm text"], ["note_id", 980190962], ["created_at", "2015-07-16 20:52:23.960525"], ["updated_at", "2015-07-16 20:52:23.960525"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/notes/980190962
+Completed 302 Found in 11ms (ActiveRecord: 4.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
+  [1m[35m (2.5ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+NotesTest: test_shouldn't_create_an_invalid_note
+------------------------------------------------
+  [1m[35mNote Load (2.1ms)[0m  SELECT  "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Started GET "/projects/980190962/notes/new" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by NotesController#new as HTML
+  Parameters: {"project_id"=>"980190962"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 980190962]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered notes/_note_form.html.erb (2.8ms)
+  Rendered notes/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+Started POST "/projects/980190962/notes" for 127.0.0.1 at 2015-07-16 20:52:23 +0000
+Processing by NotesController#create as HTML
+  Parameters: {"note"=>{"project_id"=>"#<Project:0x000000054e3360>", "title"=>"", "text"=>""}, "project_id"=>"980190962"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 980190962]]
+Unpermitted parameter: project_id
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered shared/_error_messages.html.erb (4.3ms)
+  Rendered notes/_note_form.html.erb (9.1ms)
+  Rendered notes/new.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 24ms (Views: 16.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "notes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
