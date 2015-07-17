@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TestNotesApp</title>
+  <title>SkyNotes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
     <%= render 'layouts/header' %>
-    <div class="container-fluid">  
+    <div class="container-fluid">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-	   <%= yield %>
-    </div>
+    <div class="row">
+	     <%= yield %>
+      <%= render 'layouts/action_bar' if :action_bar.present? %>
+   </div> <!-- row -->
+ </div> <!-- container-fluid -->
 </body>
 </html>
