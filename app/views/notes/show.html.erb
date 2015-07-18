@@ -3,9 +3,15 @@
     <li class="active"><%= link_to "Edit Note", edit_note_path(@note) %></li>
     <li><%= link_to "Delete Note", @note, method: :delete %></li>
   </ul>
+
+  <h4>Tags</h4>
+  <p>Tags go here</p>
+
 <% end %>
 
   <div class="col-sm-10 main">
+
+
     <p class="page-header"><%= link_to raw("&laquo; #{@note.project.name}"), project_path(@note.project) %></p>
 
     <div class="panel panel-default">

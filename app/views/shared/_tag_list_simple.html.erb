@@ -1,0 +1,9 @@
+<% form_for object do |o| %>
+<div class="form-group">
+  <%= o.text_field :tag_list, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= o.submit 'Post', class: "btn btn-primary" %>
+</div>
+<% end %>
