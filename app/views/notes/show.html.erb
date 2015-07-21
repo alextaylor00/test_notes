@@ -5,7 +5,12 @@
   </ul>
 
   <h4>Tags</h4>
-  <p><%= @note.tag_list %></p>
+  <p>
+    <% @note.tag_list.each do |tag| %>
+      <%= link_to tag, remove_tag_note_path(@note, tag_string: tag), method: :delete %>
+    <% end %>
+
+  </p>
 
   <h4>Add Tags</h4>
   <p>Separate tags with commas.</p>
