@@ -6,4 +6,9 @@ module NotesHelper
       "#{text[0..length]}..."
     end
   end
+
+  def separate_with_commas(text)
+    # used to separate tag_list when editing.
+    text.split(" ").join(", ")
+  end
 end

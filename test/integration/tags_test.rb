@@ -25,7 +25,8 @@ class TagsTest < ActionDispatch::IntegrationTest
   end
 
   test "should be able to add tags from the notes show page" do
-    flunk
+    get note_path(@test_note)
+    assert_select 
   end
 
   test "should be able to remove tags from the notes show page" do

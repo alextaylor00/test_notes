@@ -21,6 +21,11 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :tag_list %>
+      <%= f.text_field :tag_list, value: separate_with_commas(@note.tag_list), class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
       <%= link_to "Cancel", project_path(@project), class: "btn" %>
       <%= f.submit 'Post', class: "btn btn-primary" %>
     </div>

@@ -1,5 +1,10 @@
 class NotesController < ApplicationController
-	before_action :set_note_ivar, only: [:show, :edit, :update, :destroy]
+	before_action :set_note_ivar, only: [:show,
+																			 :edit,
+																			 :update,
+																			 :destroy,
+																			 :add_tag,
+																			 :remove_tag]
 
 	# Shows all notes.
 	def index
@@ -43,7 +48,29 @@ class NotesController < ApplicationController
 			flash[:warning] = "Error updating note."
 			redirect_to note_path(@note)
 		end
+	end
 
+	def add_tag
+		tag_string = params[:tag_string]
+		@note.tag_list.add(tag_string, parse: true)
+
+		unless @note.save
+			flash[:warning] = "Error adding tag."
+		end
+
+		redirect_to note_path(@note)
+	end
+
+	def remove_tag
+		# TODO: refactor this and add_tag, they're basically the same
+		tag_string = params[:tag_string]
+		@note.tag_list.remove(tag_string, parse: true)
+
+		unless @note.save
+			flash[:warning] = "Error removing tag."
+		end
+
+		redirect_to note_path(@note)
 	end
 
 	def destroy

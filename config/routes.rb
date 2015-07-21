@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   resources :projects, shallow: true do
     resources :notes do
       resources :comments
+
+      member do
+        post    'add_tag'
+        delete  'remove_tag'
+      end
+
     end
   end
 
