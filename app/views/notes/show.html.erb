@@ -11,7 +11,7 @@
 
   <h4>Add Tags</h4>
   <p>Separate tags with commas.</p>
-  <%= form_for @note, url: add_tag_note_path(@note), method: :post do |f| %>
+  <%= form_for @note, url: add_tag_note_path(@note), method: :post, remote: true do |f| %>
     <div class="form-group">
       <%= text_field_tag :tag_string %>
       <%= f.submit "+", class: "btn btn-primary" %>

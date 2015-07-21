@@ -12,6 +12,10 @@
 
 <% end %>
 
+<%= form_for @note, url: add_tag_note_path(@note), method: :post, remote: true do |x| %>
+    <%= text_field_tag :tag_string %>
+    <%= x.submit "+", class: "btn btn-primary" %>
+<% end %>
 
 
 </div>

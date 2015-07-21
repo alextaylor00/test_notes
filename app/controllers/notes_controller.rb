@@ -58,7 +58,11 @@ class NotesController < ApplicationController
 			flash[:warning] = "Error adding tag."
 		end
 
-		redirect_to note_path(@note)
+		respond_to do |format|
+			format.html { redirect_to note_path(@note) }
+			format.js
+		end
+
 	end
 
 	def remove_tag
