@@ -63,14 +63,18 @@ class NotesController < ApplicationController
 
 	def remove_tag
 		# TODO: refactor this and add_tag, they're basically the same
-		tag_string = params[:tag_string]
-		@note.tag_list.remove(tag_string, parse: true)
+		@tag_string = params[:tag_string]
+		@note.tag_list.remove(@tag_string, parse: true)
 
 		unless @note.save
 			flash[:warning] = "Error removing tag."
 		end
 
-		redirect_to note_path(@note)
+		respond_to do |format|
+			format.html { redirect_to edit_note_path(@note) }
+			format.js
+		end
+
 	end
 
 	def destroy

@@ -6,15 +6,12 @@
 
   <h4>Tags</h4>
   <p>
-    <% @note.tag_list.each do |tag| %>
-      <%= link_to tag, remove_tag_note_path(@note, tag_string: tag), method: :delete %>
-    <% end %>
-
+    <%= render "shared/tag_list" %>
   </p>
 
   <h4>Add Tags</h4>
   <p>Separate tags with commas.</p>
-  <%= form_for @note, url: add_tag_note_path, method: :post do |f| %>
+  <%= form_for @note, url: add_tag_note_path(@note), method: :post do |f| %>
     <div class="form-group">
       <%= text_field_tag :tag_string %>
       <%= f.submit "+", class: "btn btn-primary" %>

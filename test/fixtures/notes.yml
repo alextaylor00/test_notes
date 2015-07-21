@@ -23,4 +23,4 @@ four:
 note_with_one_comment:
   title: This note should have one comment
   text: This note should only have one comment.
-  project: one
+  project: project_with_one_note

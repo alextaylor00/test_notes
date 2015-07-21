@@ -1,0 +1,17 @@
+<!-- Displays tags horizontally, with a "delete" link  -->
+<div class="tag_group">
+<% @note.tag_list.each do |tag| %>
+
+    <%= link_to "#{tag} <span class='glyphicon glyphicon-remove'></span>".html_safe,
+                remove_tag_note_path(@note, tag_string: tag),
+                method: :delete,
+                remote: true,
+                class: "btn btn-default btn-sm tag_group_item",
+                role: "button",
+                title: "Remove this tag" %>
+
+<% end %>
+
+
+
+</div>

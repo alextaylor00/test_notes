@@ -12,3 +12,6 @@ two:
 
 three:
   name: Project Three
+
+project_with_one_note:
+  name: Project With One Note

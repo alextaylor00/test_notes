@@ -1,0 +1,7 @@
+<% @note.tag_list.each do |tag| %>
+  <div class="tag_group">
+    <button class="btn btn-default" type="button">
+      <%= link_to tag, "#" %>
+    </button>
+  </div>
+<% end %>

@@ -24,20 +24,6 @@ class TagsTest < ActionDispatch::IntegrationTest
     assert_match @tag_three, response.body
   end
 
-  test "should be able to add tags from the notes show page" do
-    get note_path(@test_note)
-    assert_select 
-  end
-
-  test "should be able to remove tags from the notes show page" do
-    flunk
-  end
-
-  test "shouldn't wipe out 'new comment' text box when adding a new tag" do
-    # TODO: maybe we can inject a value into the new comment box, then
-    #   test for it after adding a new tag
-    flunk
-  end
 
 
 
