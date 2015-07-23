@@ -20,5 +20,11 @@ class Note < ActiveRecord::Base
   # Misc
   acts_as_taggable
 
+  def add_tags(string)
+    delim = ActsAsTaggableOn.delimiter
+    self.tag_list.add(string, parse: true)
+    return string.split(delim)
+  end
+
 
 end

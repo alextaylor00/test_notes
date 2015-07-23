@@ -51,14 +51,11 @@ class NotesController < ApplicationController
 	end
 
 	def add_tag
-		tag_string = params[:tag_string]
-		@note.tag_list.add(tag_string, parse: true)
-		@new_tag = @note.tag_list.last # this is used by add_tag.js.erb to render the partial
+		@new_tags = @note.add_tags(params[:tag_string])
 
 		unless @note.save
 			flash[:warning] = "Error adding tag."
 		end
-		
 
 		respond_to do |format|
 			format.html { redirect_to note_path(@note) }

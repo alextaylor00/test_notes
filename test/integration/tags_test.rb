@@ -24,6 +24,20 @@ class TagsTest < ActionDispatch::IntegrationTest
     assert_match @tag_three, response.body
   end
 
+  test "should append tags to the list after adding tags on show page" do
+    new_tags = "newtag01, newtag02"
+
+    get note_path(@test_note)
+    xhr :post, add_tag_note_path(@test_note), tag_string: new_tags
+
+    # the response from an xhr call will be rendered javascript,
+    #   NOT the entire page.
+    assert_match "newtag01", response.body
+    assert_match "newtag02", response.body
+
+
+  end
+
 
 
 
