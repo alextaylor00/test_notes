@@ -1,1 +1,2 @@
-alert("Added tag");
+$("#tags_group").append("<%= j render 'shared/tag_item', tag: @new_tag %>");
+$("#tag_string").val("");
