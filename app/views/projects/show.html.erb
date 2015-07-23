@@ -4,10 +4,10 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Status</th>
-        <th>Note</th>
-        <th>Date</th>
-        <th>Tags</th>
+        <th class="col-sm-1">Status</th>
+        <th class="col-sm-6">Note</th>
+        <th class="col-sm-1">Date</th>
+        <th class="col-sm-4">Tags</th>
       </tr>
     </thead>
     <tbody>
@@ -19,7 +19,7 @@
           <p><%= preview_text note.text %></p>
         </td>
         <td><%= note.created_at.to_formatted_s(:long) %></td>
-        <td>tags</td>
+        <td><%= note.tag_list %></td>
       </tr>
     <% end %>
     </tbody>

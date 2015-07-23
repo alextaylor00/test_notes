@@ -82,7 +82,8 @@ class NotesController < ApplicationController
 
 	def destroy
 		if @note.destroy
-			redirect_to project_path(@note.project), notice: "Note deleted."
+			flash[:success] = "Note deleted."
+			redirect_to project_path(@note.project)
 		end
 	end
 

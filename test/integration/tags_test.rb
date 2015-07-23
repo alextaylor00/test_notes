@@ -34,8 +34,6 @@ class TagsTest < ActionDispatch::IntegrationTest
     #   NOT the entire page.
     assert_match "newtag01", response.body
     assert_match "newtag02", response.body
-
-
   end
 
 
